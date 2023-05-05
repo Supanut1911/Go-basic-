@@ -20,9 +20,9 @@ func main() {
 
 	// fmt.Printf("%d %d %f %d", x,y,z, aa)
 	// fmt.Printf("%d %d %d %d", x,y,z, aa)
-
-	condition()
-
+	
+	// condition()
+	helooArr()
 }
 
 func condition() {
@@ -34,4 +34,29 @@ func condition() {
 		fmt.Printf("fail")
 
 	}
+}
+
+func helooArr() {
+	//declaration fix array
+	var x[3] int= [3]int{1,2,3}
+
+	//short declaration
+	y := [3]int{10,20,30}
+	y[0] = 111
+
+	//2D
+	z := [3][2]int{
+		{1,2},
+		{10,20},
+		{111,222},
+	}
+
+	//dynamic array
+	aa := [...]int{1,2,3,4,5}
+
+	//empty array
+	bb := []int{}
+
+	fmt.Printf("%#v\n %v\n %v\n %v\n %v",x, y, z, aa, bb)
+
 }
