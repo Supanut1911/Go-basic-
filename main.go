@@ -26,7 +26,8 @@ func main() {
 	
 	// condition()
 	// helooArr()
-	sliceList()
+	// sliceList()
+	mapObject()
 }
 
 func condition() {
@@ -89,5 +90,34 @@ func sliceList () {
 	fmt.Printf("\n\n %v \n", cs)
 
 	fmt.Printf("\n %v \n %v \n", aa, bb)
+
+}
+
+func mapObject(){
+	//full declaration map variable
+	// var countries map[string]string{}
+	
+	//short declaration
+	countries :=   map[string]string{"greeting": "yoyo"}
+
+	countries["en"] = "Hello"
+	countries["th"] = "สวัสดี"
+
+
+
+	
+	// map แต่ละตัวจะคืนค่ามา 2 อย่างคือ value, boolean_valid_data
+	county, statusCountry := countries["jp"]
+
+	//ใช้ map ร่วมกับ if
+	if statusCountry {
+		fmt.Print("found =>", county)
+	} else {
+		fmt.Printf("invalid key")
+	}
+	//การคืนค่าของ go สามารถคืนได้มากกว่า 1 ค่า เรียกว่า tuple 
+
+
+	fmt.Printf( county, statusCountry)
 
 }
