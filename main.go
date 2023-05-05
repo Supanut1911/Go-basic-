@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode/utf8"
+)
 
 //package scope / global var
 var z int
@@ -22,7 +25,8 @@ func main() {
 	// fmt.Printf("%d %d %d %d", x,y,z, aa)
 	
 	// condition()
-	helooArr()
+	// helooArr()
+	sliceList()
 }
 
 func condition() {
@@ -58,5 +62,32 @@ func helooArr() {
 	bb := []int{}
 
 	fmt.Printf("%#v\n %v\n %v\n %v\n %v",x, y, z, aa, bb)
+
+}
+
+func sliceList () {
+	//emply array is slice
+	//					0	 1	2	 3	4	 5	6	 7  8   9
+	x := []int{10,20,30,40,50,60,70,80,90,100}
+
+	//select slice 
+	aa := x[8:10]
+
+	//selct to le
+	bb := x[1:]
+
+	//list can append
+	x = append(x, 4)
+	y := append(x,10)
+	z := len(y)
+	
+	ch := "กขค"
+	cs := utf8.RuneCountInString(ch)
+
+	fmt.Printf("%v \n %v \n %v \n", x, y, z)
+
+	fmt.Printf("\n\n %v \n", cs)
+
+	fmt.Printf("\n %v \n %v \n", aa, bb)
 
 }
