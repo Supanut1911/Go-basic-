@@ -27,7 +27,8 @@ func main() {
 	// condition()
 	// helooArr()
 	// sliceList()
-	mapObject()
+	// mapObject()
+	forLoop()
 }
 
 func condition() {
@@ -120,4 +121,17 @@ func mapObject(){
 
 	fmt.Printf( county, statusCountry)
 
+}
+
+func forLoop() {
+	value := []int{1,2,3,4,5}
+	
+	for i:=0; i < len(value); i++ {
+		println(value[i])
+	}
+
+	for j,v := range value {
+		println(j, v)
+
+	}
 }
