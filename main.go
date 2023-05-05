@@ -132,6 +132,9 @@ func forLoop() {
 
 	for j,v := range value {
 		println(j, v)
+	}
 
+	for _,v := range value {
+		println("yo =>", v)
 	}
 }
