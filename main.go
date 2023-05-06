@@ -30,7 +30,7 @@ func main() {
 	// mapObject()
 	// forLoop()
 	c := sumFunction(10,20)
-	fmt.Printf("c: %v\n", c)
+	_ = c
 
 	//case use all tuple
 	add, sub, text := tupleReturn(33,66)
@@ -38,15 +38,33 @@ func main() {
 	//case use some tuple
 	xy, _, _ := tupleReturn(22,11)
 
-	fmt.Print(add, sub, text)
-	fmt.Println(xy)
+	// fmt.Print(add, sub, text)
+	// fmt.Println(xy)
+
+	_ = add
+	_ = sub
+	_ = text
+	_ = xy
+
 
 	//anonymus func
 	af := func(a, b int) int {
 		return a * b
 	}
 
-	fmt.Println(af(3,8))
+	// fmt.Println(af(3,8))
+	_ = af
+
+	resCal := cal(sumFunction)
+	fmt.Printf("resCal: %v\n", resCal)
+
+	ano := func(a,b int)int {
+		return a / b
+	}
+
+	resCalAno := cal(ano)
+	fmt.Printf("resCalAno: %v\n", resCalAno)
+
 
 }
 
@@ -170,3 +188,6 @@ func tupleReturn(a int, b int) (int, int, string) {
 	return c,d, "oyo"
 }
 
+func cal(fn func(int,int)int) int {
+	return fn(70,20)
+}
