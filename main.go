@@ -1,6 +1,7 @@
 package main
 
 import (
+	"basis/customer"
 	"fmt"
 	"unicode/utf8"
 )
@@ -63,14 +64,21 @@ func main() {
 	}
 
 	resCalAno := cal(ano)
-	fmt.Printf("resCalAno: %v\n", resCalAno)
+	// fmt.Printf("resCalAno: %v\n", resCalAno)
+
+	_ = resCalAno
 
 	mySlices := []int{1,2,3,4,5,6,7,8,9,10}
-	fmt.Printf("sumSlice(mySlices): %v\n", sumSlice(mySlices))
+	// fmt.Printf("sumSlice(mySlices): %v\n", sumSlice(mySlices))
+
+	_ = mySlices
 
 	ssv := sumSliceValidict(1,2,3,4,5,6,7,8,9,10)
-	fmt.Printf("ssv: %v\n", ssv)
+	// fmt.Printf("ssv: %v\n", ssv)
 
+	_ = ssv
+
+	fmt.Printf("customer.Name: %v\n", customer.Name)
 }
 
 func condition() {
