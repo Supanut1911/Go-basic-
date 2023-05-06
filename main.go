@@ -65,6 +65,11 @@ func main() {
 	resCalAno := cal(ano)
 	fmt.Printf("resCalAno: %v\n", resCalAno)
 
+	mySlices := []int{1,2,3,4,5,6,7,8,9,10}
+	fmt.Printf("sumSlice(mySlices): %v\n", sumSlice(mySlices))
+
+	ssv := sumSliceValidict(1,2,3,4,5,6,7,8,9,10)
+	fmt.Printf("ssv: %v\n", ssv)
 
 }
 
@@ -191,3 +196,19 @@ func tupleReturn(a int, b int) (int, int, string) {
 func cal(fn func(int,int)int) int {
 	return fn(70,20)
 }
+
+func sumSlice(a []int)int {
+	s := 0
+	for _, v := range a {
+		s+= v
+	}
+	return s
+}
+
+func sumSliceValidict(a ...int) int {
+	s := 0
+	for _, v := range a {
+		s+= v
+	}
+	return s
+} 
