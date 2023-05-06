@@ -28,7 +28,26 @@ func main() {
 	// helooArr()
 	// sliceList()
 	// mapObject()
-	forLoop()
+	// forLoop()
+	c := sumFunction(10,20)
+	fmt.Printf("c: %v\n", c)
+
+	//case use all tuple
+	add, sub, text := tupleReturn(33,66)
+
+	//case use some tuple
+	xy, _, _ := tupleReturn(22,11)
+
+	fmt.Print(add, sub, text)
+	fmt.Println(xy)
+
+	//anonymus func
+	af := func(a, b int) int {
+		return a * b
+	}
+
+	fmt.Println(af(3,8))
+
 }
 
 func condition() {
@@ -138,3 +157,16 @@ func forLoop() {
 		println("yo =>", v)
 	}
 }
+
+//single return
+func sumFunction(a int,b int) int {
+	return a+b
+}
+
+//multi return -> tuple  
+func tupleReturn(a int, b int) (int, int, string) {
+	c := a+b
+	d := a-b
+	return c,d, "oyo"
+}
+
