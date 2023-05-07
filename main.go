@@ -8,6 +8,15 @@ import (
 //package scope / global var
 var z int
 
+type Person struct {
+	Id int
+	Name string
+}
+
+func (p Person) Hello() string {
+	return "heelo" + p.Name
+}
+
 func main() {
 	//declaration
 	var x int = 10
@@ -80,7 +89,9 @@ func main() {
 
 	// fmt.Printf("customer.Name: %v\n", customer.Name)
 	
-	pointPointer()
+	// pointPointer()
+
+	dealWithStruct()
 
 }
 
@@ -243,4 +254,16 @@ func sumPointer (result *int) {
 	a :=10
 	b :=20
 	*result = a+b
+}
+
+func dealWithStruct () {
+	p := Person{}
+
+	p.Id = 101
+	p.Name = "Jame"
+
+
+	// fmt.Printf("p.Name: %v\n", p.Name)
+	// fmt.Println(Hello(p))
+	fmt.Println(p.Hello())
 }
