@@ -1,7 +1,6 @@
 package main
 
 import (
-	"basis/customer"
 	"fmt"
 	"unicode/utf8"
 )
@@ -57,7 +56,8 @@ func main() {
 	_ = af
 
 	resCal := cal(sumFunction)
-	fmt.Printf("resCal: %v\n", resCal)
+	_ = resCal
+	// fmt.Printf("resCal: %v\n", resCal)
 
 	ano := func(a,b int)int {
 		return a / b
@@ -78,7 +78,10 @@ func main() {
 
 	_ = ssv
 
-	fmt.Printf("customer.Name: %v\n", customer.Name)
+	// fmt.Printf("customer.Name: %v\n", customer.Name)
+	
+	pointPointer()
+
 }
 
 func condition() {
@@ -220,3 +223,24 @@ func sumSliceValidict(a ...int) int {
 	}
 	return s
 } 
+
+func pointPointer() {
+	// x := 10
+	// var y *int = &x
+	// var z *int = y
+	// _ = z
+
+	// fmt.Println(x, &x)
+	// fmt.Println(*y, y, &y)
+	// fmt.Print(*z, z, &z)
+
+	var resSum int 
+	sumPointer(&resSum)
+	fmt.Printf("resSumPointer: %v\n", resSum)
+}
+
+func sumPointer (result *int) {
+	a :=10
+	b :=20
+	*result = a+b
+}
