@@ -1,6 +1,7 @@
 package main
 
 import (
+	"basis/person"
 	"fmt"
 	"unicode/utf8"
 )
@@ -8,14 +9,14 @@ import (
 //package scope / global var
 var z int
 
-type Person struct {
-	Id int
-	Name string
-}
+// type Person struct {
+// 	Id int
+// 	Name string
+// }
 
-func (p Person) Hello() string {
-	return "heelo" + p.Name
-}
+// func (p Person) Hello() string {
+// 	return "heelo" + p.Name
+// }
 
 func main() {
 	//declaration
@@ -257,13 +258,16 @@ func sumPointer (result *int) {
 }
 
 func dealWithStruct () {
-	p := Person{}
 
-	p.Id = 101
-	p.Name = "Jame"
+	//create instance 
+	x := person.Person{}
+	x.SetName("Jame")
+
+	fmt.Printf("%#v", x.GetName())
+
 
 
 	// fmt.Printf("p.Name: %v\n", p.Name)
 	// fmt.Println(Hello(p))
-	fmt.Println(p.Hello())
+	// fmt.Println(p.Hello())
 }
